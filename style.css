@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p {
+    color: #848789;
+    line-height: 2rem;
+}
+
+p.lead {
+    text-align: center;
+}
+
+p.justify {
+    text-align: justify;
+}
+
+/* Header */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+header nav {
+    padding: 35px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header nav img {
+    max-height: 85px;
+    max-width: 94px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #4d4959;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;    
+}
+
+header nav a:hover {
+    color: #7c768e;
+}
+
+/* Main */
+
+section.lead-image {
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+
+section.lead-image img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    position: relative;
+    z-index: 0;
+    
+    /* overflow: hidden; */
+}
+
+/* About us */
+
+.about-us {
+    padding: 120px 0 130px 0;
+    background-color: #f7f7f7;
+}
+
+.about-us img {
+    max-width: 52px;
+    max-height: 43px;
+}
+
+.about-us__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+
+}
+
+.about-us h2 {
+    text-transform: uppercase;
+}
+
+/* Work */
+
+.work__inner {
+    display: grid;
+    grid-template-areas: 
+        "company-img company-img vintage-oliva"
+        "la-boriosa vintage-img vintage-img"
+        "bicycles-img retro-bike just-bicycle-img";
+
+}
+
+.work_inner .description {
+    position: relative;
+}
+
+.work__inner #company-image {
+    grid-area: company-img;
+    background-image: url('img/company_img.png');
+}
+
+.work__inner #company-image img {
+    max-width: 113px;
+}
+
+.work__inner #vintage-oliva {
+    grid-area: vintage-oliva;
+}
+
+.work__inner #la-boriosa {
+    grid-area: la-boriosa;
+}
+
+.work__inner #vintage-img {
+    grid-area: vintage-img;
+    background-image: url('img/vintage-img.png');
+}
+
+.work__inner #vintage-img img {
+    max-width: 177px;
+}
+
+.work__inner #bicycles-img {
+    grid-area: bicycles-img;
+    background-image: url('img/bicycles_img.png'); 
+}
+
+.work__inner #bicycles-img img {
+    max-width: 208px;
+}
+
+.work__inner #retro-bike {
+    grid-area: retro-bike;
+}
+
+.work__inner #just-bicycle-img {
+    grid-area: just-bicycle-img;
+    background-image: url('img/just_bicycle_img.png')
+}
+
+.work__inner img {
+    display: block;
+    max-width: 100%;
+    /* max-height: 100%; */
+    /* object-fit: contain; */
+}
+
+.work__inner h2 {
+    text-transform: uppercase;
+    margin: 30px 0 25px 0;
+}
+
+.work__inner p {
+    font-size: 16px;
+}
+
+.work__inner .description::after {
+    content: '';
+    position: relative;
+    /* bottom: 0; */
+    width: 50px;
+    margin-top: 28px;
+    border-bottom: 1px solid gray;
+}
+
+.work__inner .description::before {
+    content: '';
+    position: relative;
+    bottom: -70px;
+
+    order: 1;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+
+    /* transform-origin: center; */
+    transform: rotate(45deg) translate(8px, 10px);
+}
+
+.work__inner .large-img, .work__inner .little-img {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work__inner .description__block .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 70px;
+}
+
+.twitter {
+    background-color: #f7f7f7;
+    padding: 125px 0 70px 0;
+}
+
+.twitter__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.twitter__inner img {
+    max-width: 32px;
+    margin-bottom: 38px;
+}
+
+.twitter__inner h2 .time {
+    color: #848789;
+    font-weight: 300;
+    white-space: pre;
+}
+
+.twitter__inner h2 {
+    margin-bottom: 25px;
+}
+
+.twitter__inner figure {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 95px;
+    gap: 10px;
+}
+
+.twitter__inner svg circle {
+    
+}
+
+.twitter__inner svg circle {
+    stroke: gray;
+    fill: transparent;
+}
+
+.twitter__inner svg.active circle {
+    fill: gray;
+}
+
+/* Shop */
+
+.shop {
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+        "shop-1 shop-3 shop-4 shop-5 shop-6 shop-6"
+        "shop-2 shop-2 shop-4 shop-5 shop-7 shop-8";
+}
+
+.shop img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+}
+
+.shop #shop-1 {
+    grid-area: shop-1;
+}
+.shop #shop-2 {
+    grid-area: shop-2;
+}
+.shop #shop-3 {
+    grid-area: shop-3;
+}
+.shop #shop-4 {
+    grid-area: shop-4;
+}
+.shop #shop-5 {
+    grid-area: shop-5;
+}
+
+.shop #shop-6 {
+    grid-area: shop-6;
+    position: relative;
+    cursor: pointer;
+}
+.shop #shop-6:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #64c29e;
+    opacity: .8;
+
+    transition: opacity .5s ease-out;
+}
+.shop #shop-6 .shopnow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    /* height: 100%; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+#shop-6 .shopnow img {
+    max-width: 51px;
+}
+#shop-6 .shopnow h3 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
+
+#shop-6:hover:before {
+    opacity: 0;
+}
+
+.shop #shop-7 {
+    grid-area: shop-7;
+}
+.shop #shop-8 {
+    grid-area: shop-8;
+}
+
+.discover-shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 75px 0;
+
+    background-color: #282f35;
+}
+
+.discover-shop a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+
+    padding: 20px 55px;
+    border: 1px solid white;
+
+    transition: all .5s ease-out;
+}
+
+.discover-shop a:hover {
+    background-color: white;
+    color: #282f35;
+}
+
+/* Mailing */
+
+.mailing {
+    padding: 110px 0;
+    background-color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mailing img {
+    max-width: 94px;
+}
+
+.mailing h3 {
+    margin-top: 38px;
+    margin-bottom: 25px;
+
+    color: #848789;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.mailing input {
+    padding: 25px;
+    width: 400px;
+
+    color: #929292;
+    font-style: italic;
+    border: 1px solid #929292;
+}
+
+.mailing input:focus {
+    outline: none;
+}
+
+.mailing button {
+    padding: 25px 45px;
+    background-color: #64c29e;
+    border: 1px solid #64c29e;
+    color: white;
+    cursor: pointer;
+
+    transition: all .5s ease-out;
+}
+
+.mailing button:hover {
+    background-color: #282f35;
+    border: 1px solid #282f35;
+}
+
+/* Footer */
+
+footer {
+    background-color: #f7f7f7;
+    padding: 98px 0;
+}
+
+.footer__inner {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    color: #848789;
+}
+
+.footer__inner .address {
+    justify-self: start;
+}
+
+.footer__inner .socials {
+    justify-self: center;
+    display: flex;
+    gap: 15px;
+}
+
+.footer__inner .socials img {
+    max-width: 35px;
+}
+
+.footer__inner .sign {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__inner .sign span {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.footer__inner .sign img {
+    max-width: 55px;
+}
+
+/* Media */
+
+@media screen and (max-width: 1199.98px) {
+
+}
+
+@media screen and (max-width: 991.98px) {
+
+}
+
+@media screen and (max-width: 767.98px) {
+
+}
+
+@media screen and (max-width: 575.98px) {
+
+}
