@@ -19,6 +19,11 @@ body {
     margin: 0 auto;
     height: 100%;
 }
+@media screen and (max-width: 767.98px) {
+    .container {
+        padding: 0 5px;
+    }
+}
 
 h2 {
     font-size: 1rem;
@@ -516,6 +521,20 @@ section.lead-image img {
     color: #282f35;
 }
 
+@media screen and (max-width: 1199.98px) {
+    .shop {
+        display: grid;
+        /* grid-auto-columns: 1fr; */
+        grid-template-areas: 
+            "shop-1 shop-3"
+            "shop-2 shop-2"
+            "shop-4 shop-5"
+            "shop-4 shop-5"
+            "shop-6 shop-6"
+            "shop-7 shop-8";
+    }
+}
+
 /* Mailing */
 
 .mailing {
@@ -570,6 +589,14 @@ section.lead-image img {
     border: 1px solid #282f35;
 }
 
+@media screen and (max-width: 767.98px) {
+    .mailing form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 /* Footer */
 
 footer {
@@ -613,6 +640,29 @@ footer {
 
 .footer__inner .sign img {
     max-width: 55px;
+}
+
+@media screen and (max-width: 767.98px) {
+    footer {
+        position: relative;
+        top: 10vh;
+        padding: 10px 0;
+    }
+
+    .footer__inner {
+        grid-template-columns: 1fr;
+        grid-auto-columns: 1fr;
+        gap: 2  5px;
+    }
+    .footer__inner .address {
+        justify-self: start;
+    }
+    .footer__inner .socials {
+        justify-self: start;
+    }
+    .footer__inner .sign {
+        justify-self: start;
+    }
 }
 
 /* Media */
