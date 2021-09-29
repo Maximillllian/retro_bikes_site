@@ -6,7 +6,6 @@ let navLinks = document.querySelectorAll('header nav a');
 let navCircles = document.querySelectorAll('header nav .circle');
 
 let lead_image = document.querySelector('.lead-image img');
-let work_images = document.querySelectorAll(".work .large-img, .work .little-img");
 
 document.addEventListener('scroll', () => {
     let value = window.scrollY;
@@ -19,6 +18,19 @@ document.addEventListener('scroll', () => {
     }
 
 });
+
+// Postloading animation
+
+let navElements = document.querySelectorAll('header nav > *');
+let aboutUs = document.querySelector('#about-us');
+
+let postloadTl = gsap.timeline({paused: true})
+postloadTl.from(lead_image, {y: -100, opacity: 0, duration: .5})
+          .addLabel('leadImageOnload')
+          .from(navElements, {y: -100, opacity: 0, stagger: .05})
+          .from(aboutUs, {x: -100, opacity: 0}, 'leadImageOnload')
+
+window.onload = () => postloadTl.play();
 
 // Mobile nav animation
 let mobileWindow = window.matchMedia('screen and (max-width:767.98px)');
@@ -42,3 +54,22 @@ if (mobileWindow.matches) {
         el.addEventListener('click', toggleNav);
     });
 };
+
+// Rise Images
+
+let shopImages = document.querySelectorAll(".shop div");
+let shopSection = document.querySelector('#shop');
+let workImages = document.querySelectorAll(".work__inner div");
+let workSection = document.querySelector('#work');
+
+let shopImagesTl = gsap.timeline({scrollTrigger: {
+    trigger: shopSection,
+    start: "top bottom"
+}});
+shopImagesTl.from(shopImages, {opacity: 0, stagger: .1, ease: Power1.easeInOut})
+
+let workImagesTl = gsap.timeline({scrollTrigger: {
+    trigger: workSection,
+    start: "top bottom"
+}});
+workImagesTl.from(workImages, {opacity: 0, stagger: .1, ease: Power1.easeInOut})
